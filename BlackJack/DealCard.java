@@ -2,27 +2,14 @@ package BlackJack;
 
 import java.util.Random;
 
-public class Blackjack {
+public class DealCard {
     public Random random = new Random();
 
     private int card;
     private int cardValue;
 
     private String cardType;
-    private String ace = "Ace";
-    private String two = "Two";
-    private String three = "Three";
-    private String four = "Four";
-    private String five = "Five";
-    private String six = "Six";
-    private String seven = "Seven";
-    private String eight = "Eight";
-    private String nine = "Nine";
-    private String ten = "Ten";
-    private String jack = "Jack";
-    private String queen = "Queen";
-    private String king = "King";
-    private String issues = "Having Problems";
+
 
     public String getCard() {
         dealCard();
@@ -45,43 +32,43 @@ public class Blackjack {
 
         if (card <= 4) {
             cardValue = 11;
-            cardType = ace;
+            cardType = "Ace";
         } else if (card <= 8) {
             cardValue = 2;
-            cardType = two;
+            cardType = "Two";
         } else if (card <= 12) {
             cardValue = 3;
-            cardType = three;
+            cardType = "Three";
         } else if (card <= 16) {
             cardValue = 4;
-            cardType = four;
+            cardType = "Four";
         } else if (card <= 20) {
             cardValue = 5;
-            cardType = five;
+            cardType = "Five";
         } else if (card <= 24) {
             cardValue = 6;
-            cardType = six;
+            cardType = "Six";
         } else if (card <= 28) {
             cardValue = 7;
-            cardType = seven;
+            cardType = "Seven";
         } else if (card <= 32) {
             cardValue = 8;
-            cardType = eight;
+            cardType = "Eight";
         } else if (card <= 36) {
             cardValue = 9;
-            cardType = nine;
+            cardType = "Nine";
         } else if (card <= 40) {
             cardValue = 10;
-            cardType = ten;
+            cardType = "Ten";
         } else if (card <= 44) {
             cardValue = 10;
-            cardType = jack;
+            cardType = "Jack";
         } else if (card <= 48) {
             cardValue = 10;
-            cardType = queen;
+            cardType = "Queen";
         } else if (card <= 52) {
             cardValue = 10;
-            cardType = king;
+            cardType = "King";
         } else {
             cardType = "Unknown";
         }

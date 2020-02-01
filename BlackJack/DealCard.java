@@ -5,11 +5,11 @@ import java.util.Random;
 public class DealCard {
     public Random random = new Random();
 
+
+
     private int card;
     private int cardValue;
-
     private String cardType;
-
 
     public String getCard() {
         dealCard();
@@ -75,17 +75,4 @@ public class DealCard {
 
     }
 
-//    public String declareWinner() {
-//        String winner = "You've won!";
-//        String loser = "You've... lost";
-//        String tie = "Wow, you tied";
-//
-//        if (cardValue + cardTwoValue > dealerCardValue + dealerCardValueTwo) {
-//            return winner;
-//        } else if (cardValue + cardTwoValue < dealerCardValue + dealerCardValueTwo) {
-//            return loser;
-//        } else {
-//            return tie;
-//        }
-//    }
 }

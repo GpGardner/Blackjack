@@ -9,13 +9,22 @@ public class Blackjack {
     public Random dealer2 = new Random();
 
 
+    private int card;
     private int cardOne;
     private int cardTwo;
+    private int cardThree;
+    private int cardFour;
+    private int cardFive;
+    private int cardValue;
     private int cardOneValue;
     private int cardTwoValue;
+    private int cardThreeValue;
+    private int cardFourValue;
+    private int cardFiveValue;
     private int dealerCardValue;
     private int dealerCardValueTwo;
 
+    private String cardType;
     private String ace = "Ace";
     private String two = "Two";
     private String three = "Three";
@@ -31,162 +40,176 @@ public class Blackjack {
     private String king = "King";
     private String issues = "Having Problems";
 
-
-
-    public int getCardOne() {
-        return cardOne;
+    public int getCard() {
+        return card;
     }
 
-
-    //Saving for cheaters later
-//    public void setCardOne(int cardOne) {
-//        this.cardOne = cardOne;
-//    }
-
-    public int getCardTwo() {
-        return cardTwo;
+    public String getCardOne() {
+        dealCard();
+        getCardOneValue();
+        return cardType;
     }
 
-
-    //Saving for cheaters later
-//    public void setCardTwo(int cardTwo) {
-//        this.cardTwo = cardTwo;
-//    }
-
-    public int calcCardOne() {
-        cardOne = random.nextInt(52) + 1;
-        return cardOne;
+    public String getCardTwo() {
+        dealCard();
+        getCardTwoValue();
+        return cardType;
     }
 
-    public int calcCardTwo() {
-        cardTwo = random2.nextInt(52) + 1;
-        return cardTwo;
+    public String getCardThree() {
+        dealCard();
+        getCardThreeValue();
+        return cardType;
     }
 
-    public int calcDealerTotal() {
-        dealerCardValue = dealer.nextInt(11)+1;
-        dealerCardValueTwo = dealer2.nextInt(11)+1;
-        return dealerCardValue + dealerCardValueTwo;
+    public String getCardFour() {
+        dealCard();
+        getCardFourValue();
+        return cardType;
+    }
+
+    public String getCardFive() {
+        dealCard();
+        getCardFiveValue();
+        return cardType;
+    }
+
+    public int getCardValue() {
+        return cardValue;
     }
 
     public int getCardOneValue() {
+        cardOneValue = cardValue;
         return cardOneValue;
     }
 
-//    public void setCardOneValue(int cardOneValue) {
-//        this.cardOneValue = cardOneValue;
-//    }
-
     public int getCardTwoValue() {
+        cardTwoValue = cardValue;
         return cardTwoValue;
     }
 
-//    public void setCardTwoValue(int cardTwoValue) {
-//        this.cardTwoValue = cardTwoValue;
-//    }
+    public int getCardThreeValue() {
+        cardThreeValue = cardValue;
+        return cardThreeValue;
+    }
 
-    public String dealCardOne() {
-        calcCardOne();
+    public int getCardFourValue() {
+        cardFourValue = cardValue;
+        return cardFourValue;
+    }
 
-        if (cardOne <= 4) {
-            cardOneValue = 11;
-            return ace;
-        } else if (cardOne <= 8) {
-            cardOneValue = 2;
-            return two;
-        } else if (cardOne <= 12) {
-            cardOneValue = 3;
-            return three;
-        } else if (cardOne <= 16) {
-            cardOneValue = 4;
-            return four;
-        } else if (cardOne <= 20) {
-            cardOneValue = 5;
-            return five;
-        } else if (cardOne <= 24) {
-            cardOneValue = 6;
-            return six;
-        } else if (cardOne <= 28) {
-            cardOneValue = 7;
-            return seven;
-        } else if (cardOne <= 32) {
-            cardOneValue = 8;
-            return eight;
-        } else if (cardOne <= 36) {
-            cardOneValue = 9;
-            return nine;
-        } else if (cardOne <= 40) {
-            cardOneValue = 10;
-            return ten;
-        } else if (cardOne <= 44) {
-            cardOneValue = 10;
-            return jack;
-        } else if (cardOne <= 48) {
-            cardOneValue = 10;
-            return queen;
-        } else if (cardOne <= 52) {
-            cardOneValue = 10;
-            return king;
+    public int getCardFiveValue() {
+        cardFiveValue = cardValue;
+        return cardFiveValue;
+    }
+
+    public int calcCard() {
+        card = random.nextInt(52) + 1;
+        return card;
+    }
+
+    public void dealCard() {
+        calcCard();
+
+        if (card <= 4) {
+            cardValue = 11;
+            cardType = ace;
+        } else if (card <= 8) {
+            cardValue = 2;
+            cardType = two;
+        } else if (card <= 12) {
+            cardValue = 3;
+            cardType = three;
+        } else if (card <= 16) {
+            cardValue = 4;
+            cardType = four;
+        } else if (card <= 20) {
+            cardValue = 5;
+            cardType = five;
+        } else if (card <= 24) {
+            cardValue = 6;
+            cardType = six;
+        } else if (card <= 28) {
+            cardValue = 7;
+            cardType = seven;
+        } else if (card <= 32) {
+            cardValue = 8;
+            cardType = eight;
+        } else if (card <= 36) {
+            cardValue = 9;
+            cardType = nine;
+        } else if (card <= 40) {
+            cardValue = 10;
+            cardType = ten;
+        } else if (card <= 44) {
+            cardValue = 10;
+            cardType = jack;
+        } else if (card <= 48) {
+            cardValue = 10;
+            cardType = queen;
+        } else if (card <= 52) {
+            cardValue = 10;
+            cardType = king;
         } else {
-            return issues;
+            cardType = "Unknown";
         }
 
     }
 
-    public String dealCardTwo() {
-        calcCardTwo();
-
-        if (cardTwo <= 4) {
-            cardTwoValue = 11;
-            return ace;
-        } else if (cardTwo <= 8) {
-            cardTwoValue = 2;
-            return two;
-        } else if (cardTwo <= 12) {
-            cardTwoValue = 3;
-            return three;
-        } else if (cardTwo <= 16) {
-            cardTwoValue = 4;
-            return four;
-        } else if (cardTwo <= 20) {
-            cardTwoValue = 5;
-            return five;
-        } else if (cardTwo <= 24) {
-            cardTwoValue = 6;
-            return six;
-        } else if (cardTwo <= 28) {
-            cardTwoValue = 7;
-            return seven;
-        } else if (cardTwo <= 32) {
-            cardTwoValue = 8;
-            return eight;
-        } else if (cardTwo <= 36) {
-            cardTwoValue = 9;
-            return nine;
-        } else if (cardTwo <= 40) {
-            cardTwoValue = 10;
-            return ten;
-        } else if (cardTwo <= 44) {
-            cardTwoValue = 10;
-            return jack;
-        } else if (cardTwo <= 48) {
-            cardTwoValue = 10;
-            return queen;
-        } else if (cardTwo <= 52) {
-            cardTwoValue = 10;
-            return king;
-        } else
-            return issues;
-    }
+//    public String dealCardTwo() {
+//        calcCardTwo();
+//
+//        if (cardTwo <= 4) {
+//            cardTwoValue = 11;
+//            return ace;
+//        } else if (cardTwo <= 8) {
+//            cardTwoValue = 2;
+//            return two;
+//        } else if (cardTwo <= 12) {
+//            cardTwoValue = 3;
+//            return three;
+//        } else if (cardTwo <= 16) {
+//            cardTwoValue = 4;
+//            return four;
+//        } else if (cardTwo <= 20) {
+//            cardTwoValue = 5;
+//            return five;
+//        } else if (cardTwo <= 24) {
+//            cardTwoValue = 6;
+//            return six;
+//        } else if (cardTwo <= 28) {
+//            cardTwoValue = 7;
+//            return seven;
+//        } else if (cardTwo <= 32) {
+//            cardTwoValue = 8;
+//            return eight;
+//        } else if (cardTwo <= 36) {
+//            cardTwoValue = 9;
+//            return nine;
+//        } else if (cardTwo <= 40) {
+//            cardTwoValue = 10;
+//            return ten;
+//        } else if (cardTwo <= 44) {
+//            cardTwoValue = 10;
+//            return jack;
+//        } else if (cardTwo <= 48) {
+//            cardTwoValue = 10;
+//            return queen;
+//        } else if (cardTwo <= 52) {
+//            cardTwoValue = 10;
+//            return king;
+//        } else
+//            return issues;
+//    }
 
     public String declareWinner() {
         String winner = "You've won!";
         String loser = "You've... lost";
         String tie = "Wow, you tied";
 
-        if (cardOneValue + cardTwoValue > dealerCardValue + dealerCardValueTwo) {
+        if (cardValue + cardTwoValue > dealerCardValue + dealerCardValueTwo) {
             return winner;
-        } else if (cardOneValue + cardTwoValue < dealerCardValue + dealerCardValueTwo) {
+        } else if (cardValue + cardTwoValue < dealerCardValue + dealerCardValueTwo) {
             return loser;
         } else {
             return tie;

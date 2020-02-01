@@ -10,19 +10,27 @@ public class Blackjack {
 
 
     private int card;
-    private int cardOne;
-    private int cardTwo;
-    private int cardThree;
-    private int cardFour;
-    private int cardFive;
+//    private int cardOne;
+//    private int cardTwo;
+//    private int cardThree;
+//    private int cardFour;
+//    private int cardFive;
     private int cardValue;
     private int cardOneValue;
     private int cardTwoValue;
     private int cardThreeValue;
     private int cardFourValue;
     private int cardFiveValue;
-    private int dealerCardValue;
+    private int dealerCardOne;
+    private int dealerCardTwo;
+    private int dealerCardThree;
+    private int dealerCardFour;
+    private int dealerCardFive;
+    private int dealerCardValueOne;
     private int dealerCardValueTwo;
+    private int dealerCardValueThree;
+    private int dealerCardValueFour;
+    private int dealerCardValueFive;
 
     private String cardType;
     private String ace = "Ace";
@@ -74,6 +82,36 @@ public class Blackjack {
         return cardType;
     }
 
+    public String getDealerCardOne() {
+        dealCard();
+        getDealerCardValueOne();
+        return cardType;
+    }
+
+    public String getDealerCardTwo() {
+        dealCard();
+        getDealerCardValueTwo();
+        return cardType;
+    }
+
+    public String getDealerCardThree() {
+        dealCard();
+        getDealerCardValueThree();
+        return cardType;
+    }
+
+    public String getDealerCardFour() {
+        dealCard();
+        getDealerCardValueFour();
+        return cardType;
+    }
+
+    public String getDealerCardFive() {
+        dealCard();
+        getDealerCardValueFive();
+        return cardType;
+    }
+
     public int getCardValue() {
         return cardValue;
     }
@@ -101,6 +139,31 @@ public class Blackjack {
     public int getCardFiveValue() {
         cardFiveValue = cardValue;
         return cardFiveValue;
+    }
+
+    public int getDealerCardValueOne() {
+        dealerCardValueOne = cardValue;
+        return dealerCardValueOne;
+    }
+
+    public int getDealerCardValueTwo() {
+        dealerCardValueTwo = cardValue;
+        return dealerCardValueTwo;
+    }
+
+    public int getDealerCardValueThree() {
+        dealerCardValueThree = cardValue;
+        return dealerCardValueThree;
+    }
+
+    public int getDealerCardValueFour() {
+        dealerCardValueFour = cardValue;
+        return dealerCardValueFour;
+    }
+
+    public int getDealerCardValueFive() {
+        dealerCardValueFive = cardValue;
+        return dealerCardValueFive;
     }
 
     public int calcCard() {
@@ -156,60 +219,15 @@ public class Blackjack {
 
     }
 
-//    public String dealCardTwo() {
-//        calcCardTwo();
-//
-//        if (cardTwo <= 4) {
-//            cardTwoValue = 11;
-//            return ace;
-//        } else if (cardTwo <= 8) {
-//            cardTwoValue = 2;
-//            return two;
-//        } else if (cardTwo <= 12) {
-//            cardTwoValue = 3;
-//            return three;
-//        } else if (cardTwo <= 16) {
-//            cardTwoValue = 4;
-//            return four;
-//        } else if (cardTwo <= 20) {
-//            cardTwoValue = 5;
-//            return five;
-//        } else if (cardTwo <= 24) {
-//            cardTwoValue = 6;
-//            return six;
-//        } else if (cardTwo <= 28) {
-//            cardTwoValue = 7;
-//            return seven;
-//        } else if (cardTwo <= 32) {
-//            cardTwoValue = 8;
-//            return eight;
-//        } else if (cardTwo <= 36) {
-//            cardTwoValue = 9;
-//            return nine;
-//        } else if (cardTwo <= 40) {
-//            cardTwoValue = 10;
-//            return ten;
-//        } else if (cardTwo <= 44) {
-//            cardTwoValue = 10;
-//            return jack;
-//        } else if (cardTwo <= 48) {
-//            cardTwoValue = 10;
-//            return queen;
-//        } else if (cardTwo <= 52) {
-//            cardTwoValue = 10;
-//            return king;
-//        } else
-//            return issues;
-//    }
 
     public String declareWinner() {
         String winner = "You've won!";
         String loser = "You've... lost";
         String tie = "Wow, you tied";
 
-        if (cardValue + cardTwoValue > dealerCardValue + dealerCardValueTwo) {
+        if (cardValue + cardTwoValue > dealerCardValueOne + dealerCardValueTwo) {
             return winner;
-        } else if (cardValue + cardTwoValue < dealerCardValue + dealerCardValueTwo) {
+        } else if (cardValue + cardTwoValue < dealerCardValueOne + dealerCardValueTwo) {
             return loser;
         } else {
             return tie;

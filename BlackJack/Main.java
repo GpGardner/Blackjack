@@ -10,9 +10,11 @@ public class Main {
 
         System.out.printf("Your first card is %s : %d\n", card.getCardOne(), card.getCardOneValue());
         System.out.printf("Your second card is %s : %d\n", card.getCardTwo(), card.getCardTwoValue());
-        System.out.printf("Your third card is %s : %d\n", card.getCardThree(), card.getCardThreeValue());
-        System.out.printf("Your fourth card is %s : %d\n", card.getCardFour(), card.getCardFourValue());
-        System.out.printf("Your fifth card is %s : %d\n", card.getCardFive(), card.getCardFiveValue());
+
+        System.out.printf("The dealer card is %s : %d\n", card.getDealerCardOne(), card.getDealerCardValueOne());
+        System.out.printf("The dealer card is %s : %d\n", card.getDealerCardTwo(), card.getDealerCardValueTwo());
+
+        System.out.printf(card.declareWinner());
 
         }
     }

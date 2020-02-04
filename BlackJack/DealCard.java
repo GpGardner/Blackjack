@@ -5,8 +5,6 @@ import java.util.Random;
 public class DealCard {
     public Random random = new Random();
 
-
-
     private int card;
     private int cardValue;
     private String cardType;
